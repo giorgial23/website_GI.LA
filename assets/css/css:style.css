@@ -1,0 +1,545 @@
+/* --- 1. FONTS & RESET --- */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Montserrat:wght@400;500;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body, html {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #fff;
+    line-height: 1.6;
+}
+
+/* --- 2. HEADER & NAVIGATION --- */
+header.main-header {
+    z-index: 2000 !important;
+    position: sticky;
+    top: 0;
+    background-color: #182F52 !important; 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.main-header .fw-bold.text-white {
+    color: #CFE7F8 !important; 
+}
+
+.main-header .logo-img {
+    width: 60px; height: 60px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: #CFE7F8 !important;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 13px;
+}
+
+.navbar-nav .nav-link:hover, .navbar-nav .nav-link:focus {
+    color: #678DC6 !important;
+    outline: none;
+}
+
+/* --- 3. MOBILE MENU & BURGER --- */
+@media (min-width: 992px) {
+    .navbar-toggler { display: none !important; }
+}
+
+@media (max-width: 991.98px) {
+    .navbar-toggler {
+        display: flex !important;
+        align-items: center; justify-content: center;
+        width: 44px; height: 44px;
+        position: relative; z-index: 3001 !important;
+        border: none !important; outline: none !important;
+        box-shadow: none !important; padding: 0 !important;
+        margin-right: -10px !important;
+    }
+
+    .navbar-collapse.mobile-overlay {
+        position: fixed; top: 0; left: 0; width: 100% !important; height: 100vh !important;
+        background-color: #182F52; z-index: 3000 !important;
+        display: none; flex-direction: column !important;
+        justify-content: center !important; align-items: center !important;
+        opacity: 0; transition: opacity 0.3s ease-in-out;
+    }
+
+    .navbar-collapse.mobile-overlay.show { display: flex !important; opacity: 1; }
+    
+    .navbar-collapse.mobile-overlay .navbar-nav { width: 100%; align-items: center; }
+    
+    .navbar-collapse.mobile-overlay .nav-link {
+        font-size: 1.8rem; letter-spacing: 4px; margin: 15px 0;
+        text-align: center; width: 100%;
+    }
+}
+
+/* --- 4. HAMBURGER ICON ANIMATION --- */
+.hamburger-icon {
+    width: 30px; height: 24px;
+    display: flex; flex-direction: column; justify-content: space-between;
+}
+
+.hamburger-icon span {
+    display: block; width: 100%; height: 3px;
+    background-color: #CFE7F8; border-radius: 3px;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar-toggler:not(.collapsed) .hamburger-icon span:nth-child(1) { transform: translateY(10px) rotate(45deg); }
+.navbar-toggler:not(.collapsed) .hamburger-icon span:nth-child(2) { opacity: 0; transform: translateX(-20px); }
+.navbar-toggler:not(.collapsed) .hamburger-icon span:nth-child(3) { transform: translateY(-11px) rotate(-45deg); }
+.navbar-toggler:hover .hamburger-icon span { background-color: #678DC6; }
+
+/* --- 5. CAROUSEL --- */
+#myCarousel { z-index: 1; margin-bottom: 4rem; }
+.carousel-item { height: 32rem; background-color: #3E577D; position: relative; }
+
+/* FIX CENTRAGGIO: Allinea il contenuto perfettamente al centro del contenitore */
+.carousel-item .container { 
+    height: 100% !important; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+}
+
+.carousel-item .row { 
+    width: 100%; 
+    margin: 0; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; /* Centra orizzontalmente il contenuto della riga */
+}
+
+.carousel-square-img {
+    width: 300px; height: 300px; object-fit: cover; border-radius: 30px;
+    border: 5px solid rgba(255, 255, 255, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+/* Allineamento testo: assicurati che non ci siano padding che spingono a sinistra */
+.carousel-caption-custom { color: #fff; padding: 0 1rem; }carousel-caption { position: static !important; padding: 0 !important; text-align: left !important; }
+
+@media (max-width: 991.98px) {
+    .carousel-item { height: auto; min-height: 32rem; padding: 5rem 0 3rem 0; }
+    .carousel-square-img { width: 200px; height: 200px; margin-bottom: 2rem; }
+    .carousel-caption-custom { text-align: center; padding-right: 0; }
+}
+
+/* --- FIX SLIDE CV E ALTEZZA CAROUSEL RESPONSIVE --- */
+
+@media (max-width: 991.98px) {
+    /* 1. Forza l'altezza di tutto il carosello per evitare che la slide 2 sia più corta */
+    #myCarousel, 
+    #myCarousel .carousel-inner, 
+    #myCarousel .carousel-item {
+        height: 650px !important; 
+    }
+
+    /* 2. Centra il contenitore della slide CV (quella che era text-end) */
+    #myCarousel .carousel-item .col-lg-8.text-end {
+        text-align: center !important;
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    /* 3. Centra il tasto "VAI AL CV" */
+    #myCarousel .carousel-item .col-lg-8 p {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+    }
+
+    /* 4. Centra l'immagine del CV e mettila sopra/sotto con margine */
+    #myCarousel .carousel-item .col-lg-4.text-center.order-last.order-lg-first {
+        display: flex !important;
+        justify-content: center !important;
+        width: 100% !important;
+        margin: 0 auto 1.5rem auto !important;
+    }
+
+    /* 5. Centratura universale per tutte le slide (Benvenuti, Portfolio, CV) */
+    #myCarousel .carousel-item .container {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        height: 100% !important;
+        text-align: center !important;
+    }
+}
+
+/* --- 5.1 PROJECT CAROUSEL (Modificato: Zero Bordi & 16:9) --- */
+.project-carousel {
+    height: auto !important;
+    min-height: 0 !important;
+    background-color: transparent !important;
+    line-height: 0; /* Rimuove spazi bianchi sotto l'immagine */
+}
+
+.project-carousel .carousel-inner {
+    background-color: transparent !important;
+    height: auto !important;
+}
+
+.project-carousel .carousel-item {
+    height: auto !important; 
+    min-height: 0 !important;
+    background-color: transparent !important;
+}
+
+.project-carousel .carousel-item img {
+    width: 100% !important;
+    height: auto !important; 
+    object-fit: cover; /* Assicura copertura totale dei bordi */
+    display: block;
+}
+
+/* Frecce visibili e cliccabili */
+.project-carousel .carousel-control-prev,
+.project-carousel .carousel-control-next {
+    z-index: 10 !important;
+    width: 10%;
+}
+
+.project-carousel .carousel-control-prev-icon,
+.project-carousel .carousel-control-next-icon {
+    filter: invert(1) grayscale(100) brightness(0.2) !important;
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/* Fix per i Tag (Badge) della card */
+.card-body .d-flex.gap-2 {
+    flex-wrap: wrap !important;
+    justify-content: flex-start;
+}
+
+.card-body .badge.border {
+    white-space: normal;
+    text-align: center;
+}
+
+/* --- 6. HERO & STRATEGY AREAS --- */
+.hero-wrapper { display: flex; align-items: center; background-color: #CFE7F8; padding: 20px 0 40px 0 !important; }
+.hero-box { display: flex; background: #fff; border-radius: 24px; overflow: hidden; max-width: 1100px; margin: 0 auto; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+
+.img-strategy {
+    width: 140px; height: 140px; object-fit: cover; border: 4px solid #CFE7F8;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s ease;
+}
+
+.strategy-link { display: block; transition: transform 0.3s ease; text-decoration: none !important; }
+.strategy-link:hover { transform: translateY(-5px); }
+.strategy-link:hover .img-strategy { border-color: #678DC6; box-shadow: 0 10px 20px rgba(161, 61, 76, 0.2); }
+
+.strategy-title, .row.featurette h4.fw-normal { color: #678DC6 !important; font-weight: 600 !important; margin-top: 15px; }
+.strategy-text, .row.featurette p.small.text-muted, .marketing p.small { color: #182F52 !important; font-size: 0.9rem; line-height: 1.5; margin-top: 10px; }
+
+/* --- 7. BUTTONS --- */
+.btn-primary, .btn-primary:hover, .btn-primary:active, .carousel-item .btn-primary, .featurette .btn-primary {
+    background-color: #678DC6 !important; border-color: #678DC6 !important; color: #ffffff !important;
+    padding: 12px 30px !important; border-radius: 8px !important; font-weight: 600 !important;
+    text-transform: uppercase; letter-spacing: 1px; transition: all 0.3s ease-in-out !important;
+}
+
+.btn-primary:hover { background-color: #182F52 !important; border-color: #182F52 !important; transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); }
+
+/* --- 8. FEATURETTES --- */
+.featurette-divider { margin: 5rem 0; border: 0; border-top: 1px solid #182F52; opacity: 0.5; }
+.featurette-heading { font-family: 'Cabin', sans-serif; color: #678DC6 !important; font-size: 3.5rem; }
+.featurette-heading .text-muted { color: #182F52 !important; }
+.featurette p.lead { color: #182F52 !important; font-weight: 400; max-width: 800px; margin: 0 auto; }
+.featurette .mt-4 { display: flex; justify-content: center; width: 100%; }
+
+@media (max-width: 768px) {
+    .featurette-divider { margin: 3rem 0; }
+    .featurette-heading { font-size: 1.8rem; }
+    .hero-box { flex-direction: column-reverse; margin: 0 15px; }
+    .hero-content { padding: 2rem; text-align: center; }
+}
+
+/* --- 9. SITE FOOTER --- */
+.site-footer { background-color: #182F52; color: #CFE7F8; }
+.site-footer .footer-logo img { width: 50px; height: 50px; object-fit: cover; }
+.site-footer .footer-logo span {
+    color: #CFE7F8 !important;
+}
+
+.footer-nav li { margin: 0 15px; }
+.footer-nav a, .footer-socials a { color: #CFE7F8; text-decoration: none !important; transition: all 0.3s ease; outline: none !important; }
+.footer-nav a { text-transform: uppercase; font-size: 13px; letter-spacing: 2px; font-weight: 500; }
+.footer-nav a:hover, .footer-socials a:hover { color: #678DC6 !important; }
+.footer-socials a { font-size: 1.4rem; margin-left: 20px; display: inline-block; }
+.footer-socials a:hover { transform: translateY(-3px); }
+
+.footer-bottom { border-color: rgba(240, 206, 209, 0.1) !important; }
+.footer-bottom p { opacity: 0.7; letter-spacing: 1px; }
+
+@media (max-width: 991px) {
+    .footer-socials a { margin: 0 10px; }
+    .footer-nav { flex-wrap: wrap; justify-content: center; }
+    .footer-nav li { margin: 5px 15px; }
+}
+
+/* Stile per le card del portfolio */
+.portfolio-card {
+    background-color: #fff;
+    border-radius: 20px;
+    height: 300px; /* Rende i rettangoli uniformi */
+    transition: all 0.3s ease-in-out;
+    border: 1px solid #CFE7F8;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px); /* Effetto sollevamento */
+    background-color: #CFE7F8; /* Cambio colore soft al passaggio */
+    border-color: #678DC6;
+    box-shadow: 0 10px 20px rgba(161, 61, 76, 0.1) !important;
+}
+
+.portfolio-card h3 {
+    transition: color 0.3s ease;
+}
+
+.portfolio-card:hover h3 {
+    color: #678DC6 !important;
+}
+
+/* --- SEZIONE CARATTERISTICHE (About Me) --- */
+.trait-section {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.trait-title {
+    color: #678DC6 !important;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.trait-icon {
+    font-size: 2rem;
+    color: #678DC6; 
+    display: block;
+    margin-bottom: 1rem;
+}
+
+/* Gestione dei bordi verticali grigi */
+.trait-border {
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Rimuove i bordi verticali su mobile per pulizia visiva */
+@media (max-width: 767.98px) {
+    .trait-border {
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+/* --- 10. BREADCRUMB CUSTOM --- */
+.breadcrumb-custom .breadcrumb-item a {
+    color: #749DD0 !important; /* Il tuo azzurro polvere */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.breadcrumb-custom .breadcrumb-item a:hover {
+    color: #182F52 !important; /* Diventa Navy Blue al passaggio */
+    text-decoration: underline;
+}
+
+/* Pagina attuale (non cliccabile) */
+.breadcrumb-custom .breadcrumb-item.active {
+    color: #182F52 !important; 
+    font-weight: 600;
+}
+
+/* Colore del separatore "/" */
+.breadcrumb-custom .breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(24, 47, 82, 0.3) !important;
+}
+
+/* --- 11. REGOLE COLORE NAVY BLUE E CARTA DA ZUCCHERO (About Me) --- */
+
+/* Inversione Colori Titolo <h1> */
+h1.display-4 .text-muted {
+    color: #749DD0 !important; /* About (Blu carta da zucchero) */
+}
+
+h1.display-4 span:not(.text-muted) {
+    color: #182F52 !important; /* Me (Navy Blue) */
+}
+
+/* --- Altri testi secondari in Navy Blue --- */
+
+/* Sovrascrive il grigio dei paragrafi */
+.text-muted, 
+p.strategy-text.text-muted,
+p.small.text-muted.mb-0 {
+    color: #182F52 !important;
+}
+
+/* Sovrascrive il nero dei badge (Skills) */
+.badge.border.text-dark {
+    color: #182F52 !important;
+    border-color: rgba(24, 47, 82, 0.2) !important; /* Bordo Navy leggero */
+}
+
+/* Sovrascrive la CTA finale grigia */
+h2.fw-bold.mb-4.text-muted {
+    color: #182F52 !important;
+}
+
+.badge.bg-dark.px-3.py-2 {
+    background-color: #CFE7F8 !important; /* Sfondo Carta da Zucchero */
+    color: #182F52 !important;            /* Testo Navy Blue */
+    font-weight: 600 !important;
+    border: none !important;
+}
+
+/* Badge Secondari (Le competenze: Market Analysis, SWOT, ecc.) */
+.badge.border.text-dark {
+    border-color: #182F52 !important;     /* Bordo Navy Blue */
+    color: #182F52 !important;            /* Testo Navy Blue */
+    background-color: transparent;
+    font-weight: 500;
+}
+
+/* Effetto al passaggio del mouse sui badge secondari (opzionale) */
+.badge.border.text-dark:hover {
+    background-color: #182F52;
+    color: #ffffff !important;
+    transition: 0.3s;
+}
+
+/* --- PAGINA CONTATTAMI: FORM CUSTOM --- */
+
+/* Cambia il background della card del form */
+#contact-form-container, 
+section.py-5 .card {
+    background-color: #CFE7F8 !important; /* Il tuo Azzurro Carta da Zucchero */
+    border: 1px solid rgba(24, 47, 82, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(24, 47, 82, 0.05) !important;
+}
+
+/* Colore del titolo e del testo dentro la card azzurra */
+section.py-5 .featurette-heading,
+section.py-5 .strategy-text {
+    color: #182F52 !important;
+}
+
+/* Personalizzazione dei campi di input (Focus) */
+.form-control {
+    border-radius: 10px;
+    border: 1px solid rgba(24, 47, 82, 0.2);
+    padding: 12px 15px;
+}
+
+.form-control:focus {
+    border-color: #678DC6;
+    box-shadow: 0 0 0 0.25rem rgba(103, 141, 198, 0.25);
+    outline: 0;
+}
+
+/* Bottone Invia a tutta larghezza */
+#submit-btn {
+    background-color: #182F52 !important; /* Navy Blue per il bottone principale */
+    border-color: #182F52 !important;
+    font-weight: 600;
+    letter-spacing: 1px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+#submit-btn:hover {
+    background-color: #678DC6 !important; /* Diventa azzurro al passaggio */
+    border-color: #678DC6 !important;
+    transform: translateY(-2px);
+}
+
+/* --- AGGIORNAMENTI PAGINA ABOUT ME (NAVY BORDERS) --- */
+
+/* 1. Linee divisorie della sezione Trait (Poliglotta, Analitica, Creativa) */
+.trait-section {
+    border-top: 1px solid #182F52 !important;
+    border-bottom: 1px solid #182F52 !important;
+}
+
+/* Linee verticali tra i tre tratti */
+.trait-border {
+    border-left: 1px solid #182F52 !important;
+    border-right: 1px solid #182F52 !important;
+}
+
+/* 2. Contorno delle box Passioni e Skills */
+.col-lg-6 .p-4.p-lg-5.h-100.shadow-sm.bg-white {
+    border: 1px solid #182F52 !important; /* Bordo Navy Blue */
+    box-shadow: 0 4px 15px rgba(24, 47, 82, 0.1) !important; /* Ombra con punta di Navy */
+}
+
+/* 3. Badge delle Skills individuali (bordo e testo Navy) */
+.badge.border.text-dark {
+    border-color: #182F52 !important;
+    color: #182F52 !important;
+    background-color: transparent !important;
+    font-weight: 500 !important;
+}
+
+/* Effetto hover per i badge delle skills */
+.badge.border.text-dark:hover {
+    background-color: #182F52 !important;
+    color: #ffffff !important;
+    transition: 0.3s ease;
+}
+
+/* 4. Colore icone tratti (Poliglotta, Analitica, Creativa) */
+.trait-icon {
+    color: #182F52 !important;
+}
+
+/* --- AGGIORNAMENTI PAGINA CV (NAVY STYLE) --- */
+
+/* 1. Linee di separazione sotto i titoli delle sezioni (Esperienza, Formazione) */
+h3.border-bottom {
+    border-bottom: 2px solid #182F52 !important; /* Linea Navy più spessa e decisa */
+    padding-bottom: 10px;
+}
+
+/* 2. Contorno delle box laterali (Skills e Lingue) */
+.col-lg-4 .card {
+    border: 1px solid #182F52 !important; /* Bordo Navy richiesto */
+    border-radius: 15px !important;
+    box-shadow: 0 4px 12px rgba(24, 47, 82, 0.08) !important; /* Ombra Navy leggerissima */
+}
+
+/* 3. Colore dei titoli dentro le box laterali (opzionale, per coerenza) */
+.col-lg-4 h4 {
+    color: #182F52 !important;
+}
+
+/* 4. Barre di progresso (Skills) */
+.progress {
+    background-color: #f0f0f0; /* Fondo barra neutro */
+    border-radius: 10px;
+}
+
+.progress-bar {
+    background-color: #749DD0 !important; /* Mantieni l'azzurro per il riempimento */
+}
+
+/* 5. Badge Lingue */
+.badge {
+    border-radius: 6px;
+    font-weight: 600;
+}
