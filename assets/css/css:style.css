@@ -98,7 +98,6 @@ header.main-header {
 #myCarousel { z-index: 1; margin-bottom: 4rem; }
 .carousel-item { height: 32rem; background-color: #3E577D; position: relative; }
 
-/* FIX CENTRAGGIO: Allinea il contenuto perfettamente al centro del contenitore */
 .carousel-item .container { 
     height: 100% !important; 
     display: flex; 
@@ -111,7 +110,7 @@ header.main-header {
     margin: 0; 
     display: flex;
     align-items: center; 
-    justify-content: center; /* Centra orizzontalmente il contenuto della riga */
+    justify-content: center;
 }
 
 .carousel-square-img {
@@ -119,7 +118,6 @@ header.main-header {
     border: 5px solid rgba(255, 255, 255, 0.2); box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-/* Allineamento testo: assicurati che non ci siano padding che spingono a sinistra */
 .carousel-caption-custom { color: #fff; padding: 0 1rem; }carousel-caption { position: static !important; padding: 0 !important; text-align: left !important; }
 
 @media (max-width: 991.98px) {
@@ -128,17 +126,13 @@ header.main-header {
     .carousel-caption-custom { text-align: center; padding-right: 0; }
 }
 
-/* --- FIX SLIDE CV E ALTEZZA CAROUSEL RESPONSIVE --- */
-
 @media (max-width: 991.98px) {
-    /* 1. Forza l'altezza di tutto il carosello per evitare che la slide 2 sia più corta */
     #myCarousel, 
     #myCarousel .carousel-inner, 
     #myCarousel .carousel-item {
         height: 650px !important; 
     }
 
-    /* 2. Centra il contenitore della slide CV (quella che era text-end) */
     #myCarousel .carousel-item .col-lg-8.text-end {
         text-align: center !important;
         display: flex !important;
@@ -148,14 +142,12 @@ header.main-header {
         width: 100% !important;
     }
 
-    /* 3. Centra il tasto "VAI AL CV" */
     #myCarousel .carousel-item .col-lg-8 p {
         display: flex !important;
         justify-content: center !important;
         width: 100% !important;
     }
 
-    /* 4. Centra l'immagine del CV e mettila sopra/sotto con margine */
     #myCarousel .carousel-item .col-lg-4.text-center.order-last.order-lg-first {
         display: flex !important;
         justify-content: center !important;
@@ -163,7 +155,6 @@ header.main-header {
         margin: 0 auto 1.5rem auto !important;
     }
 
-    /* 5. Centratura universale per tutte le slide (Benvenuti, Portfolio, CV) */
     #myCarousel .carousel-item .container {
         display: flex !important;
         align-items: center !important;
@@ -173,12 +164,11 @@ header.main-header {
     }
 }
 
-/* --- 5.1 PROJECT CAROUSEL (Modificato: Zero Bordi & 16:9) --- */
 .project-carousel {
     height: auto !important;
     min-height: 0 !important;
     background-color: transparent !important;
-    line-height: 0; /* Rimuove spazi bianchi sotto l'immagine */
+    line-height: 0;
 }
 
 .project-carousel .carousel-inner {
@@ -195,11 +185,10 @@ header.main-header {
 .project-carousel .carousel-item img {
     width: 100% !important;
     height: auto !important; 
-    object-fit: cover; /* Assicura copertura totale dei bordi */
+    object-fit: cover; 
     display: block;
 }
 
-/* Frecce visibili e cliccabili */
 .project-carousel .carousel-control-prev,
 .project-carousel .carousel-control-next {
     z-index: 10 !important;
@@ -213,7 +202,6 @@ header.main-header {
     height: 2.5rem;
 }
 
-/* Fix per i Tag (Badge) della card */
 .card-body .d-flex.gap-2 {
     flex-wrap: wrap !important;
     justify-content: flex-start;
@@ -224,7 +212,7 @@ header.main-header {
     text-align: center;
 }
 
-/* --- 6. HERO & STRATEGY AREAS --- */
+/* --- 6. HERO --- */
 .hero-wrapper { display: flex; align-items: center; background-color: #CFE7F8; padding: 20px 0 40px 0 !important; }
 .hero-box { display: flex; background: #fff; border-radius: 24px; overflow: hidden; max-width: 1100px; margin: 0 auto; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
 
@@ -286,18 +274,18 @@ header.main-header {
     .footer-nav li { margin: 5px 15px; }
 }
 
-/* Stile per le card del portfolio */
+/* --- 10. PORTFOLIO CARD --- */
 .portfolio-card {
     background-color: #fff;
     border-radius: 20px;
-    height: 300px; /* Rende i rettangoli uniformi */
+    height: 300px; 
     transition: all 0.3s ease-in-out;
     border: 1px solid #CFE7F8;
 }
 
 .portfolio-card:hover {
-    transform: translateY(-10px); /* Effetto sollevamento */
-    background-color: #CFE7F8; /* Cambio colore soft al passaggio */
+    transform: translateY(-10px); 
+    background-color: #CFE7F8; 
     border-color: #678DC6;
     box-shadow: 0 10px 20px rgba(161, 61, 76, 0.1) !important;
 }
@@ -310,7 +298,7 @@ header.main-header {
     color: #678DC6 !important;
 }
 
-/* --- SEZIONE CARATTERISTICHE (About Me) --- */
+/* --- 11. ABOUT ME --- */
 .trait-section {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -329,13 +317,11 @@ header.main-header {
     margin-bottom: 1rem;
 }
 
-/* Gestione dei bordi verticali grigi */
 .trait-border {
     border-left: 1px solid rgba(0, 0, 0, 0.1);
     border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* Rimuove i bordi verticali su mobile per pulizia visiva */
 @media (max-width: 767.98px) {
     .trait-border {
         border-left: none;
@@ -346,100 +332,86 @@ header.main-header {
     }
 }
 
-/* --- 10. BREADCRUMB CUSTOM --- */
+/* --- 12. BREADCRUMB CUSTOM --- */
 .breadcrumb-custom .breadcrumb-item a {
-    color: #749DD0 !important; /* Il tuo azzurro polvere */
+    color: #749DD0 !important; 
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 500;
 }
 
 .breadcrumb-custom .breadcrumb-item a:hover {
-    color: #182F52 !important; /* Diventa Navy Blue al passaggio */
+    color: #182F52 !important; 
     text-decoration: underline;
 }
 
-/* Pagina attuale (non cliccabile) */
 .breadcrumb-custom .breadcrumb-item.active {
     color: #182F52 !important; 
     font-weight: 600;
 }
 
-/* Colore del separatore "/" */
 .breadcrumb-custom .breadcrumb-item + .breadcrumb-item::before {
     color: rgba(24, 47, 82, 0.3) !important;
 }
 
-/* --- 11. REGOLE COLORE NAVY BLUE E CARTA DA ZUCCHERO (About Me) --- */
 
-/* Inversione Colori Titolo <h1> */
 h1.display-4 .text-muted {
-    color: #749DD0 !important; /* About (Blu carta da zucchero) */
+    color: #749DD0 !important; 
 }
 
 h1.display-4 span:not(.text-muted) {
-    color: #182F52 !important; /* Me (Navy Blue) */
+    color: #182F52 !important; 
 }
 
-/* --- Altri testi secondari in Navy Blue --- */
-
-/* Sovrascrive il grigio dei paragrafi */
 .text-muted, 
 p.strategy-text.text-muted,
 p.small.text-muted.mb-0 {
     color: #182F52 !important;
 }
 
-/* Sovrascrive il nero dei badge (Skills) */
 .badge.border.text-dark {
     color: #182F52 !important;
-    border-color: rgba(24, 47, 82, 0.2) !important; /* Bordo Navy leggero */
+    border-color: rgba(24, 47, 82, 0.2) !important; 
 }
 
-/* Sovrascrive la CTA finale grigia */
 h2.fw-bold.mb-4.text-muted {
     color: #182F52 !important;
 }
 
 .badge.bg-dark.px-3.py-2 {
-    background-color: #CFE7F8 !important; /* Sfondo Carta da Zucchero */
-    color: #182F52 !important;            /* Testo Navy Blue */
+    background-color: #CFE7F8 !important; 
+    color: #182F52 !important;            
     font-weight: 600 !important;
     border: none !important;
 }
 
-/* Badge Secondari (Le competenze: Market Analysis, SWOT, ecc.) */
 .badge.border.text-dark {
-    border-color: #182F52 !important;     /* Bordo Navy Blue */
-    color: #182F52 !important;            /* Testo Navy Blue */
+    border-color: #182F52 !important;     
+    color: #182F52 !important;            
     background-color: transparent;
     font-weight: 500;
 }
 
-/* Effetto al passaggio del mouse sui badge secondari (opzionale) */
 .badge.border.text-dark:hover {
     background-color: #182F52;
     color: #ffffff !important;
     transition: 0.3s;
 }
 
-/* --- PAGINA CONTATTAMI: FORM CUSTOM --- */
+/* --- CONTATTAMI: FORM CUSTOM --- */
 
-/* Cambia il background della card del form */
 #contact-form-container, 
 section.py-5 .card {
-    background-color: #CFE7F8 !important; /* Il tuo Azzurro Carta da Zucchero */
+    background-color: #CFE7F8 !important; 
     border: 1px solid rgba(24, 47, 82, 0.1) !important;
     box-shadow: 0 10px 30px rgba(24, 47, 82, 0.05) !important;
 }
 
-/* Colore del titolo e del testo dentro la card azzurra */
 section.py-5 .featurette-heading,
 section.py-5 .strategy-text {
     color: #182F52 !important;
 }
 
-/* Personalizzazione dei campi di input (Focus) */
 .form-control {
     border-radius: 10px;
     border: 1px solid rgba(24, 47, 82, 0.2);
@@ -452,9 +424,8 @@ section.py-5 .strategy-text {
     outline: 0;
 }
 
-/* Bottone Invia a tutta larghezza */
 #submit-btn {
-    background-color: #182F52 !important; /* Navy Blue per il bottone principale */
+    background-color: #182F52 !important; 
     border-color: #182F52 !important;
     font-weight: 600;
     letter-spacing: 1px;
@@ -463,32 +434,27 @@ section.py-5 .strategy-text {
 }
 
 #submit-btn:hover {
-    background-color: #678DC6 !important; /* Diventa azzurro al passaggio */
+    background-color: #678DC6 !important; 
     border-color: #678DC6 !important;
     transform: translateY(-2px);
 }
 
-/* --- AGGIORNAMENTI PAGINA ABOUT ME (NAVY BORDERS) --- */
 
-/* 1. Linee divisorie della sezione Trait (Poliglotta, Analitica, Creativa) */
 .trait-section {
     border-top: 1px solid #182F52 !important;
     border-bottom: 1px solid #182F52 !important;
 }
 
-/* Linee verticali tra i tre tratti */
 .trait-border {
     border-left: 1px solid #182F52 !important;
     border-right: 1px solid #182F52 !important;
 }
 
-/* 2. Contorno delle box Passioni e Skills */
 .col-lg-6 .p-4.p-lg-5.h-100.shadow-sm.bg-white {
-    border: 1px solid #182F52 !important; /* Bordo Navy Blue */
-    box-shadow: 0 4px 15px rgba(24, 47, 82, 0.1) !important; /* Ombra con punta di Navy */
+    border: 1px solid #182F52 !important; 
+    box-shadow: 0 4px 15px rgba(24, 47, 82, 0.1) !important; 
 }
 
-/* 3. Badge delle Skills individuali (bordo e testo Navy) */
 .badge.border.text-dark {
     border-color: #182F52 !important;
     color: #182F52 !important;
@@ -496,49 +462,41 @@ section.py-5 .strategy-text {
     font-weight: 500 !important;
 }
 
-/* Effetto hover per i badge delle skills */
 .badge.border.text-dark:hover {
     background-color: #182F52 !important;
     color: #ffffff !important;
     transition: 0.3s ease;
 }
 
-/* 4. Colore icone tratti (Poliglotta, Analitica, Creativa) */
 .trait-icon {
     color: #182F52 !important;
 }
 
-/* --- AGGIORNAMENTI PAGINA CV (NAVY STYLE) --- */
 
-/* 1. Linee di separazione sotto i titoli delle sezioni (Esperienza, Formazione) */
 h3.border-bottom {
-    border-bottom: 2px solid #182F52 !important; /* Linea Navy più spessa e decisa */
+    border-bottom: 2px solid #182F52 !important; 
     padding-bottom: 10px;
 }
 
-/* 2. Contorno delle box laterali (Skills e Lingue) */
 .col-lg-4 .card {
-    border: 1px solid #182F52 !important; /* Bordo Navy richiesto */
+    border: 1px solid #182F52 !important; 
     border-radius: 15px !important;
-    box-shadow: 0 4px 12px rgba(24, 47, 82, 0.08) !important; /* Ombra Navy leggerissima */
+    box-shadow: 0 4px 12px rgba(24, 47, 82, 0.08) !important; 
 }
 
-/* 3. Colore dei titoli dentro le box laterali (opzionale, per coerenza) */
 .col-lg-4 h4 {
     color: #182F52 !important;
 }
 
-/* 4. Barre di progresso (Skills) */
 .progress {
-    background-color: #f0f0f0; /* Fondo barra neutro */
+    background-color: #f0f0f0; 
     border-radius: 10px;
 }
 
 .progress-bar {
-    background-color: #749DD0 !important; /* Mantieni l'azzurro per il riempimento */
+    background-color: #749DD0 !important; 
 }
 
-/* 5. Badge Lingue */
 .badge {
     border-radius: 6px;
     font-weight: 600;
