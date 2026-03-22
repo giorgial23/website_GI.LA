@@ -21,60 +21,8 @@ $border-color_2: #182F52;
 $border-color_3: rgba(240, 206, 209, 0.1);
 $border-color_4: rgba(24, 47, 82, 0.2);
 
-/* --- 1. FONTS & RESET --- */
 @import "https://fonts.googleapis.com/css2?family=Cabin:wght@700&family=Montserrat:wght@400;500;600&display=swap";
-/* --- 2. HEADER & NAVIGATION --- */
-/* --- 3. MOBILE MENU & BURGER --- */
-/* --- 4. HAMBURGER ICON ANIMATION --- */
-/* --- 5. CAROUSEL --- */
-/* FIX CENTRAGGIO: Allinea il contenuto perfettamente al centro del contenitore */
-/* Allineamento testo: assicurati che non ci siano padding che spingono a sinistra */
-/* --- FIX SLIDE CV E ALTEZZA CAROUSEL RESPONSIVE --- */
-/* 1. Forza l'altezza di tutto il carosello per evitare che la slide 2 sia più corta */
-/* 2. Centra il contenitore della slide CV (quella che era text-end) */
-/* 3. Centra il tasto "VAI AL CV" */
-/* 4. Centra l'immagine del CV e mettila sopra/sotto con margine */
-/* 5. Centratura universale per tutte le slide (Benvenuti, Portfolio, CV) */
-/* --- 5.1 PROJECT CAROUSEL (Modificato: Zero Bordi & 16:9) --- */
-/* Frecce visibili e cliccabili */
-/* Fix per i Tag (Badge) della card */
-/* --- 6. HERO & STRATEGY AREAS --- */
-/* --- 7. BUTTONS --- */
-/* --- 8. FEATURETTES --- */
-/* --- 9. SITE FOOTER --- */
-/* Stile per le card del portfolio */
-/* --- SEZIONE CARATTERISTICHE (About Me) --- */
-/* Gestione dei bordi verticali grigi */
-/* Rimuove i bordi verticali su mobile per pulizia visiva */
-/* --- 10. BREADCRUMB CUSTOM --- */
-/* Pagina attuale (non cliccabile) */
-/* Colore del separatore "/" */
-/* --- 11. REGOLE COLORE NAVY BLUE E CARTA DA ZUCCHERO (About Me) --- */
-/* Inversione Colori Titolo <h1> */
-/* --- Altri testi secondari in Navy Blue --- */
-/* Sovrascrive il grigio dei paragrafi */
-/* Sovrascrive il nero dei badge (Skills) */
-/* Sovrascrive la CTA finale grigia */
-/* Badge Secondari (Le competenze: Market Analysis, SWOT, ecc.) */
-/* Effetto al passaggio del mouse sui badge secondari (opzionale) */
-/* --- PAGINA CONTATTAMI: FORM CUSTOM --- */
-/* Cambia il background della card del form */
-/* Colore del titolo e del testo dentro la card azzurra */
-/* Personalizzazione dei campi di input (Focus) */
-/* Bottone Invia a tutta larghezza */
-/* --- AGGIORNAMENTI PAGINA ABOUT ME (NAVY BORDERS) --- */
-/* 1. Linee divisorie della sezione Trait (Poliglotta, Analitica, Creativa) */
-/* Linee verticali tra i tre tratti */
-/* 2. Contorno delle box Passioni e Skills */
-/* 3. Badge delle Skills individuali (bordo e testo Navy) */
-/* Effetto hover per i badge delle skills */
-/* 4. Colore icone tratti (Poliglotta, Analitica, Creativa) */
-/* --- AGGIORNAMENTI PAGINA CV (NAVY STYLE) --- */
-/* 1. Linee di separazione sotto i titoli delle sezioni (Esperienza, Formazione) */
-/* 2. Contorno delle box laterali (Skills e Lingue) */
-/* 3. Colore dei titoli dentro le box laterali (opzionale, per coerenza) */
-/* 4. Barre di progresso (Skills) */
-/* 5. Badge Lingue */
+
 * {
 	margin: 0;
 	padding: 0;
